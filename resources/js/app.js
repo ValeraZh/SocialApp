@@ -6,7 +6,9 @@
 
 window.Vue = require('vue').default;
 import {createApp} from "vue";
+import router from "./router";
 const app = createApp({});
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -20,4 +22,4 @@ const app = createApp({});
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 app.component('example-component', require('./components/ExampleComponent.vue').default);
-app.mount("#app");
+app.use(router).mount("#app");
